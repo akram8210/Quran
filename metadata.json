@@ -1,0 +1,6 @@
+{
+  "name": "مصحف التدبر",
+  "description": "تطبيق مصحف شريف للموبايل بالرسم العثماني مع التفسير، السماع الصوتي، البحث بالكلمات، عدسة المفردات، رادار المتشابهات، ووضع الحفظ الذكي.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

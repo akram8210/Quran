@@ -1,0 +1,163 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: "UthmanicHafs";
+  src: url("/fonts/UthmanicHafs1Ver18.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg-canvas: #f6f0e2;
+  --bg-surface: #fdfaf1;
+  --bg-elevated: #ffffff;
+  --bg-subtle: #ede3cf;
+  --text-primary: #1a1612;
+  --text-secondary: #5a5145;
+  --text-muted: #7a7062;
+  --accent-primary: #0e5a42;
+  --accent-primary-hover: #0a4633;
+  --accent-soft: rgba(14, 90, 66, 0.09);
+  --accent-gold: #9a7122;
+  --accent-gold-soft: rgba(154, 113, 34, 0.14);
+  --border-hairline: rgba(112, 95, 65, 0.16);
+  --mushaf-frame-outer: rgba(154, 113, 34, 0.38);
+  --mushaf-frame-inner: rgba(14, 90, 66, 0.22);
+  --ayah-highlight: rgba(14, 90, 66, 0.1);
+  --ayah-playing: rgba(154, 113, 34, 0.14);
+  --word-playing: rgba(14, 90, 66, 0.18);
+}
+
+html[data-theme="day"] {
+  --bg-canvas: #f4f5f3;
+  --bg-surface: #ffffff;
+  --bg-elevated: #ffffff;
+  --bg-subtle: #eceee9;
+  --text-primary: #141816;
+  --text-secondary: #4e5651;
+  --text-muted: #6e7771;
+  --accent-primary: #0f5f46;
+  --accent-primary-hover: #0b4a36;
+  --accent-soft: rgba(15, 95, 70, 0.08);
+  --accent-gold: #8c661c;
+  --accent-gold-soft: rgba(140, 102, 28, 0.12);
+  --border-hairline: rgba(20, 24, 22, 0.1);
+  --mushaf-frame-outer: rgba(140, 102, 28, 0.32);
+  --mushaf-frame-inner: rgba(15, 95, 70, 0.2);
+  --ayah-highlight: rgba(15, 95, 70, 0.09);
+  --ayah-playing: rgba(140, 102, 28, 0.13);
+  --word-playing: rgba(15, 95, 70, 0.18);
+}
+
+html.dark,
+html[data-theme="night"] {
+  --bg-canvas: #0b100e;
+  --bg-surface: #121815;
+  --bg-elevated: #18201c;
+  --bg-subtle: #1f2924;
+  --text-primary: #eee9dc;
+  --text-secondary: #b9b2a4;
+  --text-muted: #8c8679;
+  --accent-primary: #34a87e;
+  --accent-primary-hover: #29936d;
+  --accent-soft: rgba(52, 168, 126, 0.15);
+  --accent-gold: #d6ad58;
+  --accent-gold-soft: rgba(214, 173, 88, 0.17);
+  --border-hairline: rgba(236, 231, 219, 0.12);
+  --mushaf-frame-outer: rgba(214, 173, 88, 0.32);
+  --mushaf-frame-inner: rgba(52, 168, 126, 0.22);
+  --ayah-highlight: rgba(52, 168, 126, 0.15);
+  --ayah-playing: rgba(214, 173, 88, 0.18);
+  --word-playing: rgba(52, 168, 126, 0.26);
+}
+
+@layer base {
+  html,
+  body {
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    font-family: "IBM Plex Sans Arabic", system-ui, -apple-system, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior-y: contain;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.font-uthmani {
+  font-family: "UthmanicHafs", "Amiri Quran", "Amiri", serif;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "ccmp" 1, "mark" 1, "mkmk" 1;
+  text-rendering: optimizeLegibility;
+}
+
+.font-ui {
+  font-family: "IBM Plex Sans Arabic", system-ui, -apple-system, sans-serif;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Printed Mushaf underline strictly for Sajdah words */
+.sajdah-word-underline {
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--accent-gold);
+  padding-bottom: 1px;
+}
+
+/* Justified Madinah Mushaf line */
+.mushaf-line-justify {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.mushaf-line-center {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.25em;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.hifz-blur-word {
+  filter: blur(5.5px);
+  transition: filter 160ms cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.hifz-blur-word.revealed {
+  filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-hairline);
+  border-radius: 9999px;
+}

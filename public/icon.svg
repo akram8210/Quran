@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#126b4f" />
+      <stop offset="100%" stop-color="#09402e" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e3be6e" />
+      <stop offset="100%" stop-color="#b3842d" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+
+  <!-- Subtle outer ornamental ring -->
+  <circle cx="256" cy="256" r="204" fill="none" stroke="url(#goldGrad)" stroke-width="5" stroke-opacity="0.38" />
+
+  <!-- Rub el-Hizb 8-pointed Islamic geometric star -->
+  <g transform="translate(256, 256)">
+    <rect x="-132" y="-132" width="264" height="264" rx="18" fill="none" stroke="url(#goldGrad)" stroke-width="10" />
+    <rect x="-132" y="-132" width="264" height="264" rx="18" fill="none" stroke="url(#goldGrad)" stroke-width="10" transform="rotate(45)" />
+  </g>
+
+  <!-- Inner dark emerald medallion -->
+  <circle cx="256" cy="256" r="126" fill="#0b4b36" stroke="url(#goldGrad)" stroke-width="4" />
+
+  <!-- Open Mushaf pages silhouette -->
+  <g transform="translate(256, 260)">
+    <!-- Left page -->
+    <path d="M -6 -60 C -36 -74 -72 -72 -94 -58 L -94 46 C -72 34 -36 36 -6 52 Z" fill="#fdfaf1" />
+    <!-- Right page -->
+    <path d="M 6 -60 C 36 -74 72 -72 94 -58 L 94 46 C 72 34 36 36 6 52 Z" fill="#f4ebd6" />
+    <!-- Center spine -->
+    <path d="M -6 -60 L 0 -55 L 6 -60 L 6 52 L 0 58 L -6 52 Z" fill="#d6ad58" />
+    <!-- Subtle script lines -->
+    <path d="M -74 -34 H -24 M -74 -14 H -24 M -74 6 H -24 M -74 26 H -32" stroke="#0e5a42" stroke-width="5" stroke-linecap="round" stroke-opacity="0.72" />
+    <path d="M 24 -34 H 74 M 24 -14 H 74 M 24 6 H 74 M 32 26 H 74" stroke="#0e5a42" stroke-width="5" stroke-linecap="round" stroke-opacity="0.72" />
+    <!-- Bookmark ribbon -->
+    <path d="M 0 50 L 0 82 L -10 72 L -20 82 L -20 46 Z" fill="#e3be6e" />
+  </g>
+</svg>
